@@ -15,7 +15,7 @@ dynomitedb_dynomite_listen_address: 127.0.0.1
 dynomitedb_dynomite_listen_port: 8102
 dynomitedb_dynomite_seeds: []
 dynomitedb_dynomite_servers: # underlying storage (redis or memcached) connecrtion info
-  - address: "{{redis_bind}}"
+  - address: "127.0.0.1"
     port: "{{redis_port}}"
 
 dynomitedb_redis_version: 3.2.1
