@@ -11,7 +11,7 @@ Environment=DYNOMITE_CONF=/etc/dynomite/dynomite.yaml
 Type=forking
 ; Environment vars to customize startup
 EnvironmentFile=-/etc/default/dynomite
-ExecStart=/usr/local/sbin/dynomite -d -g -c $DYNOMITE_CONF -p /var/run/dynomite/dynomite.pid
+ExecStart=/usr/local/sbin/dynomite -d-c $DYNOMITE_CONF -p /var/run/dynomite/dynomite.pid
 ; Restart dynomite every 100ms
 Restart=always
 PIDFile=/var/run/dynomite/dynomite.pid
