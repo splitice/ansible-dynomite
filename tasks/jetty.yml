@@ -1,5 +1,22 @@
 # follow instructions http://www.eclipse.org/jetty/documentation/9.4.x/startup-unix-service.html
 ---
+
+- name: add oracle java repository
+  sudo: yes
+  apt_repository: repo='ppa:webupd8team/java'
+
+- name: accept java 8 license
+  sudo: yes
+  debconf: name='oracle-java8-installer' question='shared/accepted-oracle-license-v1-1' value='true' vtype='select'
+
+- name: install oracle java 8
+  sudo: yes
+  apt: name={{item}} state=latest
+  with_items:
+    - oracle-java8-installer
+    - ca-certificates
+    - oracle-java8-set-default
+
 - name: download jetty
   get_url:
     url: "{{ dynomitedb_manager_jetty_download_url }}"
