@@ -83,7 +83,7 @@
     creates: "{{ dynomitedb_dynomite_install_dir }}/launch_dynomite.sh"
 
 - name: Link binary
-  file: src=/opt/dynomitedb/dynomite/dynomite dest=/usr/lal/sbin/dynomite state=link
+  file: src=/opt/dynomitedb/dynomite/dynomite dest=/usr/local/sbin/dynomite state=link
 
 - name: Copy environment
   copy: src=/usr/local/src/dynomite-{{ dynomitedb_dynomite_version }}/init/systemd_environment__dynomite dest=/etc/default/dynomite remote_src=True
