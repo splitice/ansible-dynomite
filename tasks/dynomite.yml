@@ -96,4 +96,4 @@
   file: dest=/var/run/dynomite/ owner=dynomite state=directory
 
 - name: Ensure dynomite started
-  service: name=dynomite state=started
+  service: name=dynomite state=started enabled=yes
