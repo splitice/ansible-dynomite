@@ -86,10 +86,10 @@
   file: src=/opt/dynomitedb/dynomite/dynomite dest=/usr/local/sbin/dynomite state=link
 
 - name: Copy environment
-  copy: src=/usr/local/src/dynomite-{{ dynomitedb_dynomite_version }}/init/systemd_environment__dynomite dest=/etc/default/dynomite
+  copy: src=/usr/local/src/dynomite-{{ dynomitedb_dynomite_version }}/init/systemd_environment__dynomite dest=/etc/default/dynomite remote_src=True
 
 - name: Copy init scripts
-  copy: src=/usr/local/src/dynomite-{{ dynomitedb_dynomite_version }}/init/systemd_service_ubuntu__dynomite.service dest=/usr/lib/systemd/system/dynomite.service
+  copy: src=/usr/local/src/dynomite-{{ dynomitedb_dynomite_version }}/init/systemd_service_ubuntu__dynomite.service dest=/usr/lib/systemd/system/dynomite.service remote_src=True
   notify: reload systemd
 
 - name: Ensure dynomite started
