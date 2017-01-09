@@ -77,7 +77,20 @@
     dest: "{{ dynomitedb_dynomite_conf_dir }}/recon_key.pem"
     owner: "{{ dynomitedb_dynomite_user }}"
 
-- name: Copy control scripts
+- name: Copy dynomite
   shell: cp /usr/local/src/dynomite-{{ dynomitedb_dynomite_version }}/bin/* {{ dynomitedb_dynomite_install_dir }}
   args:
     creates: "{{ dynomitedb_dynomite_install_dir }}/launch_dynomite.sh"
+
+- name: Link binary
+  file: src=/opt/dynomitedb/dynomite/dynomite dest=/usr/local/sbin/dynomite state=link
+
+- name: Copy environment
+  copy: src=/usr/local/src/dynomite-{{ dynomitedb_dynomite_version }}/init/systemd_environment__dynomite /etc/default/dynomite
+
+- name: Copy init scripts
+  copy: src=/usr/local/src/dynomite-{{ dynomitedb_dynomite_version }}/init/systemd_service_ubuntu__dynomite.service /usr/lib/systemd/system/dynomite.service
+  notify: reload systemd
+
+- name: Ensure dynomite started
+  service: name=dynomite state=started
