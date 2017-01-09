@@ -89,7 +89,7 @@
   copy: src=/usr/local/src/dynomite-{{ dynomitedb_dynomite_version }}/init/systemd_environment__dynomite dest=/etc/default/dynomite remote_src=True
 
 - name: Copy init scripts
-  copy: src=/usr/local/src/dynomite-{{ dynomitedb_dynomite_version }}/init/systemd_service_ubuntu__dynomite.service dest=/lib/systemd/system/dynomite.service remote_src=True
+  template: src=dynomite.j2 dest=/lib/systemd/system/dynomite.service
   notify: reload systemd
 
 - name: Create PID dir
