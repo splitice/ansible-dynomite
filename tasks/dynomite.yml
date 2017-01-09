@@ -92,5 +92,8 @@
   copy: src=/usr/local/src/dynomite-{{ dynomitedb_dynomite_version }}/init/systemd_service_ubuntu__dynomite.service dest=/lib/systemd/system/dynomite.service remote_src=True
   notify: reload systemd
 
+- name: Create PID dir
+  file: dest=/var/run/dynomite/ owner:dynomite state=directory
+
 - name: Ensure dynomite started
   service: name=dynomite state=started
