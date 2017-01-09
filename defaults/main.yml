@@ -7,6 +7,8 @@ dynomitedb_dynomite_user: dynomite
 dynomitedb_dynomite_dyn_listen_address: 127.0.0.1
 dynomitedb_dynomite_dyn_listen_port: 8101
 dynomitedb_dynomite_tokens: 0
+dynomitedb_dynomite_rack: default
+dynomitedb_dynomite_datacenter: default
 
 dynomitedb_dynomite_data_store: 0 # 0 - redis, 1 - memcached
 dynomitedb_dynomite_listen_address: 127.0.0.1

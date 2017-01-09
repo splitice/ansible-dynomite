@@ -8,3 +8,5 @@ dyn_o_mite:
   - {{ server.address }}:{{ server.port }}:{{ loop.index }}
 {% endfor %}
   tokens: {{ dynomitedb_dynomite_tokens }}
+  datacenter: {{ dynomitedb_dynomite_datacenter}}
+  rack: {{ dynomitedb_dynomite_rack}}
