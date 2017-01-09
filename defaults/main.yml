@@ -2,7 +2,7 @@
 dynomitedb_dynomite_version: dev
 dynomitedb_dynomite_download_url: https://github.com/Netflix/dynomite/archive/{{ dynomitedb_dynomite_version }}.zip
 dynomitedb_dynomite_install_dir: /opt/dynomitedb/dynomite
-dynomitedb_dynomite_conf_dir: "{{ dynomitedb_dynomite_install_dir }}/conf"
+dynomitedb_dynomite_conf_dir: "/etc/dynomite"
 dynomitedb_dynomite_user: dynomite
 dynomitedb_dynomite_dyn_listen_address: 127.0.0.1
 dynomitedb_dynomite_dyn_listen_port: 8101
