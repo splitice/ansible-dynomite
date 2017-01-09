@@ -28,6 +28,7 @@ dynomitedb_redis_port: 22122
 dynomitedb_redis_logfile: "\"\""
 dynomitedb_redis_dir: ./
 
+dynomitedb_manager_enable: false
 dynomitedb_manager_jetty_version: 9.3.10.v20160621
 dynomitedb_manager_jetty_download_url: http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-distribution/{{ dynomitedb_manager_jetty_version }}/jetty-distribution-{{ dynomitedb_manager_jetty_version }}.tar.gz
 dynomitedb_manager_jetty_home_dir: /opt/dynomitedb/jetty

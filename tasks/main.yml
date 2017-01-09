@@ -3,4 +3,6 @@
 - include: redis.yml
 - include: dynomite.yml
 - include: jetty.yml
+  when: dynomitedb_manager_enable
 - include: dynomite-manager.yml
+  when: dynomitedb_manager_enable
