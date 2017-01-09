@@ -3,9 +3,9 @@ dyn_o_mite:
   data_store: {{ dynomitedb_dynomite_data_store }}
   listen: {{ dynomitedb_dynomite_listen_address }}:{{ dynomitedb_dynomite_listen_port }}
   dyn_seeds:
-  {% for server in dynomitedb_dynomite_seeds %}
-    - {{ server }}
-  {% endfor %}
+{% for server in dynomitedb_dynomite_seeds %}
+  - {{ server }}
+{% endfor %}
   servers:
 {% for server in dynomitedb_dynomite_servers %}
   - {{ server.address }}:{{ server.port }}:{{ loop.index }}
