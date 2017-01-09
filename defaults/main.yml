@@ -16,7 +16,7 @@ redis_port: 22122
 dynomitedb_dynomite_data_store: 0 # 0 - redis, 1 - memcached
 dynomitedb_dynomite_listen_address: 127.0.0.1
 dynomitedb_dynomite_listen_port: 8102
-dynomitedb_dynomite_seed_provider: simple_provider
+dynomitedb_dynomite_seeds: []
 dynomitedb_dynomite_servers: # underlying storage (redis or memcached) connecrtion info
   - address: "{{redis_bind}}"
     port: "{{redis_port}}"
